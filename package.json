@@ -1,0 +1,29 @@
+{
+  "name": "skeleton-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umairraslam/skeleton-backend.git"
+  },
+  "author": "umair.aslam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umairraslam/skeleton-backend/issues"
+  },
+  "homepage": "https://github.com/umairraslam/skeleton-backend#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "hapi": "^18.1.0",
+    "hapi-swagger": "^9.3.1",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.17",
+    "vision": "^5.4.4"
+  }
+}
