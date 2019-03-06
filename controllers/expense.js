@@ -5,7 +5,7 @@ module.exports = {
         try {
             var expense = new Expense();
             expense.date = req.payload.date;
-            expense.description = req.payload.desc;
+            expense.description = req.payload.description;
             expense.amount = req.payload.amount;
             expense.month = req.payload.month;
             expense.year = req.payload.year;

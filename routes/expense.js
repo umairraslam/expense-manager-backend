@@ -12,6 +12,9 @@ module.exports = [
             tags: ['api'],
             auth: false,
             validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string().required()
+                }).options({ allowUnknown: true }),
                 payload: Joi.object({
                     date: Joi.string(),
                     description: Joi.string(),
@@ -32,6 +35,9 @@ module.exports = [
             tags: ['api'],
             auth: false,
             validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string().required()
+                }).options({ allowUnknown: true })
             }
         }
     },
@@ -45,6 +51,9 @@ module.exports = [
             tags: ['api'],
             auth: false,
             validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string().required()
+                }).options({ allowUnknown: true }),
                 params: Joi.object({
                     year: Joi.number().required(),
                     month: Joi.string().required()
@@ -62,6 +71,9 @@ module.exports = [
             tags: ['api'],
             auth: false,
             validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string().required()
+                }).options({ allowUnknown: true }),
                 payload: Joi.object({
                     date: Joi.string(),
                     description: Joi.string(),
@@ -85,6 +97,9 @@ module.exports = [
             tags: ['api'],
             auth: false,
             validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string().required()
+                }).options({ allowUnknown: true }),
                 params: Joi.object({
                     id: Joi.string().required()
                 })

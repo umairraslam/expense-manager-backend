@@ -25,6 +25,8 @@
     "hapi-swagger": "^9.3.1",
     "inert": "^5.1.2",
     "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.4.17",
     "nodemon": "^1.18.10",
     "vision": "^5.4.4"

@@ -1,6 +1,23 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const moment = require('moment');
 const SALT_ROUNDS = 10;
+
+
+const generateJwtToken = (user) => {
+    let expires = moment().utc().add({ days: 1 }).unix();
+    let token = jwt.sign({
+        exp: expires,    //expires in 24 hrs
+        user: user
+    }, process.env.JWT_SECRET);
+    return {
+        token: token,
+        expires: moment.unix(expires).format()
+    }
+}
+
+let token;
 
 module.exports = {
     async signUp(req, res) {
@@ -33,7 +50,8 @@ module.exports = {
             console.log(user);
             let havePasswordsMatched = await bcrypt.compare(req.payload.password, user[0].password);
             if(havePasswordsMatched){
-                return res.response({message: "Authenticated"}).code(200);
+                token = generateJwtToken(user);
+                return res.response({message: "Authenticated", token: token}).code(200);
             } else{
                 return res.response({message: "Invalid credentials"}).code(500);
             }
