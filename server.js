@@ -24,7 +24,6 @@ const start = async () => {
     });
 
     //Routes
-    server.route((require('./routes/index')));
     server.route((require('./routes/expense')));
     server.route((require('./routes/auth')));
 
