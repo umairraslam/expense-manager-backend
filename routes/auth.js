@@ -4,7 +4,7 @@ const authController = require('../controllers/auth');
 module.exports = [
     {
         method: 'POST',
-        path: '/login',
+        path: '/user/login',
         handler: authController.authenticate,
         config: {
             description: 'Authenticate',
@@ -20,8 +20,24 @@ module.exports = [
         }
     },
     {
+        method: 'PUT',
+        path: '/user/forgotPassword',
+        handler: authController.forgotPassword,
+        config: {
+            description: 'Handle forgot password',
+            notes: 'Handle forgot password',
+            tags: ['api'],
+            auth: false,
+            validate: {
+                payload: Joi.object({
+                    email: Joi.string().required()
+                })
+            }
+        }
+    },
+    {
         method: 'POST',
-        path: '/signUp',
+        path: '/user/signUp',
         handler: authController.signUp,
         config: {
             description: 'Sign up',
@@ -36,6 +52,23 @@ module.exports = [
                     email: Joi.string().required(),
                     dob: Joi.string().required(),
                     password: Joi.string().required()
+                })
+            }
+        }
+    },
+    {
+        method: 'PUT',
+        path: '/user/resetPassword',
+        handler: authController.resetPassword,
+        config: {
+            description: 'Reset password',
+            notes: 'Reset password',
+            tags: ['api'],
+            auth: false,
+            validate: {
+                payload: Joi.object({
+                    password: Joi.string().required(),
+                    token: Joi.string().required()
                 })
             }
         }

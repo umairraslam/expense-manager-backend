@@ -20,6 +20,7 @@
   "homepage": "https://github.com/umairraslam/skeleton-backend#readme",
   "dependencies": {
     "bcrypt": "^3.0.0",
+    "crypto-random-string": "^1.0.0",
     "dotenv": "^6.2.0",
     "hapi": "^18.1.0",
     "hapi-swagger": "^9.3.1",
